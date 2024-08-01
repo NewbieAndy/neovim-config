@@ -1,7 +1,9 @@
 --[[
 ----基础配置----
 --]]
-
+-- 禁用默认文件浏览器
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 --utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
@@ -83,3 +85,18 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 --系统剪切板
 vim.o.clipboard = "unnamedplus"
+
+--自动保存
+vim.api.nvim_create_augroup('auto_save', { clear = true })
+-- 当从插入模式切换到普通模式时触发自动保存
+vim.api.nvim_create_autocmd('InsertLeave', {
+  group = 'auto_save',
+  pattern = '*',
+  command = 'silent! wa'
+})
+-- 当缓冲区被关闭时自动保存
+vim.api.nvim_create_autocmd('BufLeave', {
+  group = 'auto_save',
+  pattern = '*',
+  command = 'silent! wa'
+})

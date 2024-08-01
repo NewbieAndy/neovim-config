@@ -38,10 +38,9 @@ local pluginKeys = {}
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
+map("n", "<leader>z", ":NvimTreeFindFile<CR>", opt)
 -- bufferline
 -- 关闭
---"moll/vim-bbye"
-map("n", "<C-q>", ":Bdelete!<CR>", opt)
 -- 左右Tab切换
 map("n", "<leader>h", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<leader>l", ":BufferLineCycleNext<CR>", opt)

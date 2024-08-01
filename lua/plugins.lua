@@ -29,13 +29,13 @@ require("lazy").setup({
   --主题
   "folke/tokyonight.nvim",
   --左侧边栏
-  {"kyazdani42/nvim-tree.lua", dependencies = "kyazdani42/nvim-web-devicons"},
+  {"nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons"}
   --BufferLine
   --{"akinsho/bufferline.nvim", dependencies = {"kyazdani42/nvim-web-devicons","moll/vim-bbye"}},
   --github copilot
   --"github/copilot.vim",
-  {'Exafunction/codeium.vim', event = 'BufEnter'},
-  {'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons'}}
+  --{'Exafunction/codeium.vim', event = 'BufEnter'},
+  --{'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons'}}
 
 })
 

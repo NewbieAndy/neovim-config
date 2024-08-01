@@ -11,5 +11,5 @@ require("plugin-config.nvim-tree")
 --上侧buffer
 --require("plugin-config.bufferline")
 --状态栏
-require("plugin-config.lualine")
+--require("plugin-config.lualine")
 

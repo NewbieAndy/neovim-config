@@ -4,22 +4,22 @@ if not status then
   return
 end
 
+
 -- 列表操作快捷键
 local list_keys = require('keybindings').nvimTreeList
 nvim_tree.setup({
     -- 不显示 git 状态图标
     git = {
-        enable =false,
+        enable =true,
     },
-    -- project plugin 需要这样设置
-    update_cwd = true,
+    sync_root_with_cwd = true,
     update_focused_file = {
         enable = true,
-        update_cwd = true,
+        update_cwd =true,
     },
     -- 隐藏 .文件 和 node_modules 文件夹
     filters = {
-        dotfiles = true,
+        dotfiles = false,
         custom = { 'node_modules' },
     },
     view = {
@@ -46,9 +46,17 @@ nvim_tree.setup({
     system_open = {
         cmd = 'wsl-open',
     },
+
+    --其他配置项
+    ui = {
+      confirm = {
+        trash = true,
+      }
+    }
+
 })
 -- 自动关闭
-vim.cmd([[
-  autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-]])
+--vim.cmd([[
+--autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_'.tabpagenr() | quit | endif
+--]])
 
